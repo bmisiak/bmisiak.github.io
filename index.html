@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="utf-8" />
+        <title>🐻</title>
+        <style type="text/css">
+        * {margin:0; padding:0}
+        html, body {
+            min-height: 100%;
+        }
+        html {
+            background: white;
+        }
+        body {
+            /*background-color: #867ade;*/
+            /*background-color: #fbd5b9;
+            */
+            animation-name: rainbow;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            color: #483aaa;
+            display:flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+
+            background-image: url('dithered_black_transparent.png');
+            background-position: top center;
+            background-attachment: fixed;
+            width:100%;
+        }
+        header {
+            margin-bottom: 5vh;
+        }
+        article:first {
+        }
+        article {
+            padding: 10px;
+            margin: 25px;
+            background-color: rgba(255, 255, 255, 0.144);
+            border: 5px solid;
+            border-left-color: purple;
+            border-color: purple rgb(77, 0, 77) rgb(77, 0, 77) purple;
+            border-color: #ff7171 rgb(234, 45, 45) #e63434 #ea2f2f;
+        }
+        article:last-of-type {
+            margin-bottom:1vw;
+        }
+        article h4 {
+            /*color:rgb(70, 70, 255); rgb(0, 30, 193)*/
+            color: rgb(0, 17, 111);
+            font-size:30px;
+        }
+        article img {
+            box-sizing: border-box;
+            width:100%;
+            border: 1px solid black;
+            margin: 10px 0;
+            border-radius: 3px;
+        }
+        article video {
+            box-sizing: border-box;
+            width:100%;
+        }
+        article p {
+            font-weight:500;
+            color: rgb(255, 207, 207);
+            padding-top: 10px;
+            line-height: 1.4;
+            font-family: monospace;
+        }
+        header h1 {
+            font-size: 18vmin;
+            padding-top: 40vh;
+            padding-bottom: 5vh;
+            padding-left: 5vh;
+            color:white;
+            text-shadow: 0px 1px 0px black;
+        }
+
+        header h2 {
+            padding-left: 10vw;
+            margin: 0 5vh;
+            color: #fd8080;
+            text-shadow: 0px 2px 0px black, 0 0 50px black;
+            position: relative;
+        }
+
+        header h2:before {
+            background: url('heart.svg') no-repeat;
+            background-size: 100%;
+            position:absolute;
+            top:0;
+            left:0;
+            width:8vw;
+            height:8vw;
+            content: " ";
+            animation: heartbeat 1s infinite;
+        }
+
+        .my-work {
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+            background: #ff3838;
+        }
+
+        .my-work h3 {
+            padding-left: 5vw;
+        }
+
+        .my-work h3 span {
+            display: inline-block;
+            color:white;
+            text-shadow: 0px 1px 0px black;
+            font-size: 55px;
+        }
+
+        .me {
+            background: black;
+            color: pink;
+            padding: 5vh;
+            font-family: monospace;
+            line-height: 1.5;
+        }
+
+        .blink {
+            animation:blink 1s infinite;
+        }
+
+        .links {
+            display:flex;
+            flex-direction: row;
+        }
+
+        .links a {
+            display: block;
+            color: rgb(130, 130, 252);
+            margin-right: 20px;
+        }
+        
+        @keyframes rainbow {
+            0% { background-color: rgba(255, 0, 24, 0.2) }
+            16% { background-color: rgba(255, 165, 44, 0.2) }
+            32% { background-color: rgba(255, 255, 65, 0.2) }
+            48% { background-color: rgba(0, 128, 24, 0.2) }
+            64% { background-color: rgba(0, 0, 249, 0.2) }
+            80% { background-color: rgba(134, 0, 125, 0.2) }
+            100% { background-color: rgba(255, 0, 24, 0.2); }
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale( .9 ); }
+            20% { transform: scale( 1 ); }
+            40% { transform: scale( .9 ); }
+            60% { transform: scale( 1 ); }
+            80% { transform: scale( .9 ); }
+            100% { transform: scale( .9 ); }
+        }
+
+        @keyframes blink {
+            0% { visibility: visible }
+            49% { visibility: visible }
+            50% { visibility: hidden }
+            99% { visibility: hidden }
+        }
+
+        @media (min-width: 1200px) {
+            body {
+                background-size: 100% auto;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            body {
+                display: grid
+            }
+            header {
+                grid-row: 1;
+                grid-column: 1 / span 2;
+            }
+            .my-work {
+                grid-row: 2;
+                grid-column: 2;
+            }
+            .me {
+                grid-row: 2;
+                grid-column: 1;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Brian Misiak</h1>
+            <h2>Rust, full-stack, EVs, security, digital payments, crypto, sustainability</h2>
+        </header>
+        <section class="my-work">
+            <h3><span>My projects</span></h3>
+            <article>
+                <h4>🎮💰 net4game</h4>
+                <!--<video src="net4game-promo.mp4" autoplay playsinline muted loop >
+                    
+                </video>-->
+                <p>Designed and coded an MMORPG with an intricate economy, which attracted hundreds of thousands of players and lasted for more than a decade.</p>
+            </article>
+            <article>
+                <h4>🌐💻 Overbrowsered</h4>
+                <!--<img srgb(0, 30, 193)rc="https://user-images.githubusercontent.com/2332213/110250770-0aba3580-7f32-11eb-93ea-f06b920a4ee6.png" alt="Overbrowsered" />-->
+                <p>Published a Mac App Store utility app which changes macOS behavior to open web links in the most recently used browser instead of a single default.</p>
+            </article>
+            <article>
+                <h4>⚡🔌🚗 Amplet</h4>
+                <!--<img srgb(0, 30, 193)rc="https://user-images.githubusercontent.com/2332213/110250770-0aba3580-7f32-11eb-93ea-f06b920a4ee6.png" alt="Overbrowsered" />-->
+                <p>A connected electric vehicle charger. Embedded software running on ESP32, plus a Rust API backend.</p>
+            </article>
+        </section>
+        <section class="me">
+            <div class="links">
+                <a href="mailto:bmisiak@me.com">bmisiak@me.com</a>
+                <a href="">resume</a>
+                <a href="https://linkedin.com/in/brmisiak" target="_blank">linkedin</a>
+            </div>
+            <p>I picked up my first coding book at 12, way back in 2004, and have been going down the rabbit hole ever since. Love designing and creating products, making an impact and solving engineering challenges along the way.</p>
+            <p>🏳️‍🌈 he/him</p>
+            <p>📍 San Francisco</p>
+            <p class="blink">_</p>
+        </section>
+    </body>
+</html>
