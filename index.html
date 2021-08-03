@@ -34,8 +34,10 @@
         header {
             margin-bottom: 5vh;
         }
-        article:first {
+        .my-work > a {
+            text-decoration: none
         }
+        
         article {
             padding: 10px;
             margin: 25px;
@@ -66,10 +68,21 @@
         }
         article p {
             font-weight:500;
-            color: rgb(255, 244, 244);
+            /*color: rgb(255, 244, 244);*/
+            color: rgb(113, 0, 100);
             padding-top: 10px;
             line-height: 1.4;
             font-family: monospace;
+            font-size: 15px;
+        }
+        .my-work > a:hover > article {
+            background-color: rgba(255, 255, 255, 0.2)
+        }
+        .my-work > a:hover > article h4 {
+            text-decoration: underline;
+            text-decoration-color: rgb(199, 255, 86);
+            text-decoration-thickness: 2px;
+            text-decoration-style: wavy;
         }
         header h1 {
             font-size: 18vmin;
@@ -86,6 +99,7 @@
             color: #fd8080;
             text-shadow: 0px 2px 0px black, 0 0 50px black;
             position: relative;
+            font-size:3vw;
         }
 
         header h2:before {
@@ -188,32 +202,35 @@
                 grid-row: 2;
                 grid-column: 1;
             }
+            body > section {
+                margin: 2vw;
+            }
         }
         </style>
     </head>
     <body>
         <header>
             <h1>Brian Misiak</h1>
-            <h2>Rust, full-stack, EVs, security, digital payments, crypto, sustainability</h2>
+            <h2>Rust, full-stack, EVs, security, digital payments, crypto, chats, sustainability, Linux</h2>
         </header>
         <section class="my-work">
-            <h3><span>My projects</span></h3>
+            <h3><span>My products</span></h3>
             <article>
                 <h4>🎮💰 net4game</h4>
                 <!--<video src="net4game-promo.mp4" autoplay playsinline muted loop >
                     
                 </video>-->
-                <p>Designed and coded an MMORPG with an intricate economy, which attracted hundreds of thousands of players and lasted for more than a decade.</p>
+                <p>Designed and coded an MMORPG with an intricate economy, which attracted hundreds of thousands of players, 5 core team members, 30 moderators, and lasted for more than a decade.</p>
             </article>
-            <article>
+            <a href="https://apps.apple.com/us/app/overbrowsered/id1557121701?mt=12" target="_blank"><article>
                 <h4>🌐💻 Overbrowsered</h4>
                 <!--<img srgb(0, 30, 193)rc="https://user-images.githubusercontent.com/2332213/110250770-0aba3580-7f32-11eb-93ea-f06b920a4ee6.png" alt="Overbrowsered" />-->
                 <p>Published a Mac App Store utility app which changes macOS behavior to open web links in the most recently used browser instead of a single default.</p>
-            </article>
+            </article></a>
             <article>
                 <h4>⚡🔌🚗 Amplet</h4>
                 <!--<img srgb(0, 30, 193)rc="https://user-images.githubusercontent.com/2332213/110250770-0aba3580-7f32-11eb-93ea-f06b920a4ee6.png" alt="Overbrowsered" />-->
-                <p>A connected electric vehicle charger. Embedded software running on ESP32, plus a Rust API backend.</p>
+                <p>A connected electric vehicle charger. Embedded software running on ESP32 talking to a Rust API backend.</p>
             </article>
         </section>
         <section class="me">
@@ -221,6 +238,7 @@
                 <a href="mailto:bmisiak@me.com">bmisiak@me.com</a>
                 <a href="resume.pdf">resume</a>
                 <a href="https://linkedin.com/in/brmisiak" target="_blank">linkedin</a>
+                <a href="https://github.com/bmisiak" target="_blank">github</a>
             </div>
             <p>I picked up my first coding book at 12, way back in 2004, and have been going down the rabbit hole ever since. Love designing and creating products, making an impact and solving engineering challenges along the way.</p>
             <p>🏳️‍🌈 he/him</p>
