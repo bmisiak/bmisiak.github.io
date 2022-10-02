@@ -15,65 +15,55 @@
         body {
             /*background-color: #867ade;*/
             /*background-color: #fbd5b9;
-            */
+            
             animation-name: rainbow;
             animation-duration: 20s;
-            animation-iteration-count: infinite;
+            animation-iteration-count: infinite;*/
             color: #483aaa;
             display:flex;
             flex-direction: column;
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-
-            background-image: url('dithered_black_transparent.png');
-            background-position: top center;
-            background-attachment: fixed;
             width:100%;
         }
         header {
-            margin-bottom: 5vh;
-        }
-        .my-work > a {
-            text-decoration: none
+            background-image: url('dithered_black_transparent.png');
+            background-position: top center;
+            /* background-attachment: fixed; */
+            padding-bottom: 5vh;
         }
         
         article {
+            position:relative;
+        }
+        article.n4g { background: #a8eb98; } article.n4g > p { color: #354e2f }
+        article.overbrowsered { background: #f86b6b; } article.overbrowsered > p { color: #921617 }
+        article.amplet { background: #fff26e; } article.amplet > p { color: black }
+        article > h4 {
+            color: white;
+            font-size: 34px;
             padding: 10px;
-            margin: 25px;
-            background-color: rgba(255, 255, 255, 0.144);
-            border: 5px solid;
-            border-left-color: purple;
-            border-color: purple rgb(77, 0, 77) rgb(77, 0, 77) purple;
-            border-color: #ff7171 rgb(234, 45, 45) #e63434 #ea2f2f;
+            font-family: cursive;
         }
-        article:last-of-type {
-            margin-bottom:1vw;
-        }
-        article h4 {
-            /*color:rgb(70, 70, 255); rgb(0, 30, 193)*/
-            color: rgb(0, 17, 111);
-            font-size:30px;
-        }
-        article img {
+        article > img,
+        article > video {
             box-sizing: border-box;
-            width:100%;
-            border: 1px solid black;
-            margin: 10px 0;
-            border-radius: 3px;
+            width: 100%;
         }
-        article video {
-            box-sizing: border-box;
-            width:100%;
+        article > p {
+            font-weight: 500;
+            line-height: 120%;
+            font-family: Arial;
+            font-size: 16px;
+            color: #cacaca;
+            z-index: 57;
+            text-align: justify;
+            background: black;
+            padding: 20px;
         }
-        article p {
-            font-weight:500;
-            /*color: rgb(255, 244, 244);*/
-            color: rgb(113, 0, 100);
-            padding-top: 10px;
-            line-height: 1.4;
-            font-family: monospace;
-            font-size: 15px;
+        .my-work > a {
+            text-decoration: none
         }
         .my-work > a:hover > article {
             background-color: rgba(255, 255, 255, 0.2)
@@ -118,6 +108,8 @@
             padding-top: 5vh;
             padding-bottom: 5vh;
             background: #ff3838;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .my-work h3 {
@@ -204,10 +196,8 @@
         <section class="my-work">
             <h3><span>My products</span></h3>
             <article>
+                <video src="net4game-promo.mp4" autoplay playsinline muted loop></video>
                 <h4>🎮💰 net4game</h4>
-                <!--<video src="net4game-promo.mp4" autoplay playsinline muted loop >
-                    
-                </video>-->
                 <p>Designed and coded an MMORPG with an intricate economy, which attracted hundreds of thousands of players, 5 core team members, 30 moderators, and lasted for more than a decade.</p>
             </article>
             <a href="https://apps.apple.com/us/app/overbrowsered/id1557121701?mt=12" target="_blank"><article>
