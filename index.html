@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en"> 
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width">
-        <title>🐻</title>
-        <style type="text/css">
-        * {margin:0; padding:0}
-        html, body {
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>🐻</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        html,
+        body {
             min-height: 100%;
         }
+
         html {
             background: white;
         }
+
         body {
             background-color: #867ade;
             /*background-color: #fbd5b9;
@@ -19,38 +27,63 @@
             animation-duration: 20s;
             animation-iteration-count: infinite;*/
             color: #483aaa;
-            display:flex;
+            display: flex;
             flex-direction: column;
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            width:100%;
+            width: 100%;
         }
+
         header {
             background-image: url('dithered_black_transparent.png');
             background-position: top center;
             /* background-attachment: fixed; */
             padding-bottom: 5vh;
         }
-        
+
         article {
-            position:relative;
+            position: relative;
         }
-        article.n4g { background: #a8eb98; } article.n4g > p { color: #354e2f }
-        article.overbrowsered { background: #f86b6b; } article.overbrowsered > p { color: #921617 }
-        article.amplet { background: #fff26e; } article.amplet > p { color: black }
-        article > h4 {
+
+        article.n4g {
+            background: #a8eb98;
+        }
+
+        article.n4g>p {
+            color: #354e2f
+        }
+
+        article.overbrowsered {
+            background: #f86b6b;
+        }
+
+        article.overbrowsered>p {
+            color: #921617
+        }
+
+        article.amplet {
+            background: #fff26e;
+        }
+
+        article.amplet>p {
+            color: black
+        }
+
+        article>h4 {
             color: white;
             font-size: 34px;
             padding: 10px;
             font-family: cursive;
         }
-        article > img,
-        article > video {
+
+        article>img,
+        article>video {
             box-sizing: border-box;
             width: 100%;
         }
-        article > p {
+
+        article>p {
             font-weight: 500;
             line-height: 120%;
             font-family: Arial;
@@ -60,24 +93,28 @@
             text-align: justify;
             padding: 20px;
         }
-        .my-work > a {
+
+        .my-work>a {
             text-decoration: none
         }
-        .my-work > a:hover > article {
+
+        .my-work>a:hover>article {
             background-color: rgba(255, 255, 255, 0.2)
         }
-        .my-work > a:hover > article h4 {
+
+        .my-work>a:hover>article h4 {
             text-decoration: underline;
             text-decoration-color: rgb(199, 255, 86);
             text-decoration-thickness: 2px;
             text-decoration-style: wavy;
         }
+
         header h1 {
             font-size: 18vmin;
             padding-top: 40vh;
             padding-bottom: 5vh;
             padding-left: 5vh;
-            color:white;
+            color: white;
             text-shadow: 0px 1px 0px black;
         }
 
@@ -90,14 +127,14 @@
             font-size: 6vmin;
         }
 
-        header h2:before {
+        .beat:before {
             background: url('heart.svg') no-repeat;
             background-size: 100%;
-            position:absolute;
-            top:0;
-            left:0;
-            width:8vw;
-            height:8vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8vw;
+            height: 8vw;
             content: " ";
             animation: heartbeat 1s infinite;
         }
@@ -113,25 +150,25 @@
 
         .my-work h3 span {
             display: inline-block;
-            color:white;
+            color: white;
             text-shadow: 0px 1px 0px black;
             font-size: 55px;
         }
 
         .me {
-            background: black;
-            color: pink;
+            background: white;
+            color: #686e90;
             padding: 5vh;
             font-family: monospace;
             line-height: 1.5;
         }
 
         .blink {
-            animation:blink 1s infinite;
+            animation: blink 1s infinite;
         }
 
         .links {
-            display:flex;
+            display: flex;
             flex-direction: row;
         }
 
@@ -145,31 +182,79 @@
             margin: 5vw auto;
             display: block;
         }
-        
+
         @keyframes rainbow {
-            0% { background-color: rgba(255, 0, 24, 0.2) }
-            16% { background-color: rgba(255, 165, 44, 0.2) }
-            32% { background-color: rgba(255, 255, 65, 0.2) }
-            48% { background-color: rgba(0, 128, 24, 0.2) }
-            64% { background-color: rgba(0, 0, 249, 0.2) }
-            80% { background-color: rgba(134, 0, 125, 0.2) }
-            100% { background-color: rgba(255, 0, 24, 0.2); }
+            0% {
+                background-color: rgba(255, 0, 24, 0.2)
+            }
+
+            16% {
+                background-color: rgba(255, 165, 44, 0.2)
+            }
+
+            32% {
+                background-color: rgba(255, 255, 65, 0.2)
+            }
+
+            48% {
+                background-color: rgba(0, 128, 24, 0.2)
+            }
+
+            64% {
+                background-color: rgba(0, 0, 249, 0.2)
+            }
+
+            80% {
+                background-color: rgba(134, 0, 125, 0.2)
+            }
+
+            100% {
+                background-color: rgba(255, 0, 24, 0.2);
+            }
         }
 
         @keyframes heartbeat {
-            0% { transform: scale( .9 ); }
-            20% { transform: scale( 1 ); }
-            40% { transform: scale( .9 ); }
-            60% { transform: scale( 1 ); }
-            80% { transform: scale( .9 ); }
-            100% { transform: scale( .9 ); }
+            0% {
+                transform: scale(.9);
+            }
+
+            20% {
+                transform: scale(1);
+            }
+
+            40% {
+                transform: scale(.9);
+            }
+
+            60% {
+                transform: scale(1);
+            }
+
+            80% {
+                transform: scale(.9);
+            }
+
+            100% {
+                transform: scale(.9);
+            }
         }
 
         @keyframes blink {
-            0% { visibility: visible }
-            49% { visibility: visible }
-            50% { visibility: hidden }
-            99% { visibility: hidden }
+            0% {
+                visibility: visible
+            }
+
+            49% {
+                visibility: visible
+            }
+
+            50% {
+                visibility: hidden
+            }
+
+            99% {
+                visibility: hidden
+            }
         }
 
         @media (min-width: 1200px) {
@@ -179,16 +264,19 @@
         }
 
         @media (min-width: 1000px) {
-            .my-work { padding: 5vh 10vh }
+            .my-work {
+                padding: 5vh 10vh
+            }
         }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>Brian Misiak</h1>
-            <h2>Rust, TypeScript, full-stack, EVs, security, digital payments, crypto, chats, sustainability, Linux</h2>
-        </header>
-        <!--<section class="my-work">
+    </style>
+</head>
+
+<body>
+    <!--<header>
+        <h1>Brian Misiak</h1>
+        <h2>Rust, TypeScript, full-stack, EVs, security, digital payments, crypto, chats, sustainability, Linux</h2>
+    </header>
+    <section class="my-work">
             <article class="n4g">
                 <h4>🎮💰 net4game</h4>
                 <video src="PROMO%20v2%20-%20net4game.com.mp4" autoplay playsinline muted loop></video>
@@ -204,18 +292,20 @@
                 <p>A connected electric vehicle charger. Embedded software running on ESP32 talking to a Rust API backend.</p>
             </article>
         </section>-->
-        <section class="me">
-            <div class="links">
-                <a href="mailto:bmisiak@me.com">bmisiak@me.com</a>
-                <a href="resume.pdf">resume</a>
-                <a href="https://linkedin.com/in/brmisiak" target="_blank">linkedin</a>
-                <a href="https://github.com/bmisiak" target="_blank">github</a>
-            </div>
-            <p>I picked up my first coding book at 12, way back in 2004. Love designing and creating products, solving engineering challenges along the way.</p>
-            <p>🏳️‍🌈 he/him</p>
-            <p>📍 San Francisco</p>
-            <p class="blink">_</p>
-            <img class="construction" src="uc_pika.gif" alt="permanently under construction" />
-        </section>
-    </body>
+    <section class="me">
+        <div class="links">
+            <a href="mailto:bmisiak@me.com">bmisiak@me.com</a>
+            <a href="resume.pdf">resume</a>
+            <a href="https://linkedin.com/in/brmisiak" target="_blank">linkedin</a>
+            <a href="https://github.com/bmisiak" target="_blank">github</a>
+        </div>
+        <p>Brian Misiak</p>
+        <p>Rust, TypeScript, full-stack, EVs, security, digital payments, crypto, chats, sustainability, Linux</p>
+        <p>making code go vroom since 2004</p>
+        <p>📍 San Francisco</p>
+        <p class="blink">_</p>
+        <img class="construction" src="uc_pika.gif" alt="permanently under construction" />
+    </section>
+</body>
+
 </html>
