@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Overbrowsered opens links in the browser you used most recently.">
+  <title>Overbrowsered</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      background: #111;
+      color: #f2f2f2;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 48px 20px;
+    }
+
+    main {
+      width: min(760px, 100%);
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2.4rem, 10vw, 5rem);
+      letter-spacing: -0.08em;
+    }
+
+    h2 {
+      margin: 40px 0 8px;
+      font-size: 1rem;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.6;
+      color: #c8c8c8;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0 32px;
+    }
+
+    a { color: #a99cff; }
+
+    nav a {
+      border: 1px solid #4b4b4b;
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav a:hover { border-color: #a99cff; }
+
+    .icon {
+      display: block;
+      width: 144px;
+      height: auto;
+      margin-bottom: 24px;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #777;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="icon" src="icon.png" width="1024" height="1024" alt="Overbrowsered icon">
+    <h1>Overbrowsered</h1>
+    <p>Open links in the browser you used most recently.</p>
+
+    <nav aria-label="Downloads and source">
+      <a href="https://github.com/bmisiak/overbrowsered/releases/tag/windows-v0.1.0-preview">Windows preview</a>
+      <a href="https://apps.apple.com/us/app/overbrowsered/id1557121701?mt=12">Mac App Store</a>
+      <a href="https://github.com/bmisiak/overbrowsered">Source</a>
+    </nav>
+
+    <h2>Support</h2>
+    <p><a href="mailto:bmisiak@me.com">bmisiak@me.com</a></p>
+
+    <h2>Privacy</h2>
+    <p>Overbrowsered does not collect or transmit personal information. On Windows, it stores the most recently used browser identifier locally.</p>
+
+    <footer>Brian Misiak</footer>
+  </main>
+</body>
+</html>
+
