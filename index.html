@@ -179,6 +179,24 @@
             display: block;
         }
 
+        .radio {
+            border-top: 1px solid #e4e4ec;
+        }
+
+        .radio h3 {
+            padding-top: 0;
+        }
+
+        .radio p {
+            margin-top: 8px;
+        }
+
+        .radio a {
+            display: inline-block;
+            margin-top: 14px;
+            color: #6252c6;
+        }
+
         @keyframes rainbow {
             0% {
                 background-color: rgba(255, 0, 24, 0.2)
@@ -282,6 +300,7 @@
             padding-top: 20px;
         }
     </style>
+    <script src="radio.js" defer></script>
 </head>
 
 <body>
@@ -309,6 +328,11 @@
             <li>Linux</li>
         </ul>
         <img class="construction" src="uc_pika.gif" width="150" height="100" alt="permanently under construction" />
+    </section>
+    <section class="me radio" id="radio" aria-labelledby="radio-title" hidden>
+        <h3 id="radio-title">Stream AI-generated radio</h3>
+        <p>Live from my Strix Halo PC.</p>
+        <a href="https://bm-formd.spotted-ide.ts.net/">Listen &amp; request a vibe →</a>
     </section>
 </body>
 
