@@ -1,44 +1,36 @@
 (() => {
     const radio = document.getElementById('radio');
-    let timer;
-    let request;
+    const origin = 'https://bm-formd.spotted-ide.ts.net';
+    let frame = document.getElementById('radio-player');
+    if (!radio || !frame) return;
+    let lastMessage = performance.now();
 
-    async function refresh() {
-        clearTimeout(timer);
-        request?.abort();
-        request = null;
-        if (document.hidden || !navigator.onLine) {
-            radio.hidden = true;
-            return;
-        }
-
-        const check = new AbortController();
-        request = check;
-        const timeout = setTimeout(() => check.abort(), 4000);
-        try {
-            const response = await fetch('https://bm-formd.spotted-ide.ts.net/on-air', {
-                cache: 'no-store',
-                credentials: 'omit',
-                signal: check.signal,
-            });
-            const live = response.ok && (await response.json()).live === true;
-            if (request === check) radio.hidden = !live;
-        } catch {
-            if (request === check) radio.hidden = true;
-        } finally {
-            clearTimeout(timeout);
-            if (request === check) {
-                request = null;
-                timer = setTimeout(refresh, 10000);
-            }
-        }
+    function loadPlayer() {
+        radio.hidden = true;
+        const replacement = frame.cloneNode();
+        replacement.src = origin + '/';
+        frame.replaceWith(replacement);
+        frame = replacement;
+        lastMessage = performance.now();
     }
 
-    document.addEventListener('visibilitychange', refresh);
-    window.addEventListener('online', refresh);
-    window.addEventListener('offline', refresh);
-    window.addEventListener('pageshow', event => {
-        if (event.persisted) refresh();
+    window.addEventListener('message', event => {
+        if (event.origin !== origin || event.source !== frame.contentWindow
+            || event.data?.type !== 'livedj-status' || typeof event.data.live !== 'boolean') return;
+        lastMessage = performance.now();
+        radio.hidden = !event.data.live || !navigator.onLine;
     });
-    refresh();
+
+    window.addEventListener('offline', () => { radio.hidden = true; });
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+            radio.hidden = true;
+            lastMessage = performance.now();
+        }
+    });
+    // Keep background audio intact. Retry a dead frame only while the page is visible.
+    setInterval(() => {
+        if (!document.hidden && navigator.onLine && performance.now() - lastMessage > 10000) loadPlayer();
+    }, 5000);
+    loadPlayer();
 })();
