@@ -1,0 +1,7 @@
+{
+    "name": "bmisiak-radio",
+    "main": "worker.mjs",
+    "compatibility_date": "2026-10-28",
+    "workers_dev": false,
+    "routes": [{ "pattern": "radio.bmisiak.com", "custom_domain": true }]
+}

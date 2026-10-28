@@ -1,6 +1,6 @@
 (() => {
     const radio = document.getElementById('radio');
-    const origin = 'https://bm-formd.spotted-ide.ts.net';
+    const origin = 'https://radio.bmisiak.com';
     let frame = document.getElementById('radio-player');
     if (!radio || !frame) return;
     let lastMessage = performance.now();
